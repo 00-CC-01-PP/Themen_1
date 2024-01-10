@@ -48,5 +48,5 @@ test = "hello";
 console.log("Inhalt: " + test);
 
 const test2 = "Hi!"; // Deklaration + Wertzuweisung
-test2 = "Hello!";
+//test2 = "Hello!";
 console.log("Inhalt: " + test2);
