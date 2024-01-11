@@ -16,3 +16,14 @@
     console.log("John: " + ageJohn);
     console.log("Mark: " + ageMark);
     console.log("Datum: " + date);
+
+    // Deklaration
+    let isJohnOlder; // Is john older? --> y / n --> true / false
+    isJohnOlder = (ageJohn > ageMark);
+    isJohnEqual = (ageJohn == ageMark);
+    isJohnYounger = (ageJohn < ageMark);
+    console.log("Ist John älter? " + isJohnOlder);
+    console.log("is John equal? " + isJohnEqual);
+    console.log("is John younger? " + isJohnYounger);
+
+
