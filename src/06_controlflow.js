@@ -1,14 +1,14 @@
 //  Entscheidungsstrukturen | control flow
 
 //  Deklaration + Assignment
-const ageJohn = 30;
+/*const ageJohn = 30;
 const ageMark = 30;
 
 //  Deklaration
 let isJohnOlder, isJohnEqual;
-
+*/
 //  Test | Logische Aussage
-isJohnOlder = (ageJohn > ageMark);
+/*isJohnOlder = (ageJohn > ageMark);
 isJohnEqual = (ageJohn == ageMark);
 
     //Ausgabe
@@ -17,7 +17,7 @@ isJohnEqual = (ageJohn == ageMark);
     console.log("isJohnOlder: " + isJohnOlder);
     console.log("isJohnEqual: " + isJohnEqual);
     console.log("------------------");
-
+*/
 /************ IF  ************/
 // TINA --> There is no alternative!
 // entweder JA oder nix ... alternativlos
@@ -46,7 +46,7 @@ else
 /************ IF - ELSE IF  ************/
 // mit alternativen Fällen (älter, jünger, gleich alt)
 
-if (isJohnOlder)
+/*if (isJohnOlder)
 // Ja-Zweig
 {
     console.log("John ist älter!");
@@ -60,4 +60,41 @@ else if (isJohnEqual)
 else 
 {
     console.log("John ist jünger!");
+}*/
+
+/****** Fallunterscheidung / SWITCH|CASE 1 ******/
+
+const firstName = "Jane";
+let job;
+job = "driver"; // ...fährt Taxi / Uber
+job = "diver"; // ...taucht im Rhein
+job = "artist"; // ...malt ein Bild
+job = "pilot"; // ... fliegt um die Welt
+job = "teacher"; // ... unterrichtet
+job = "instructor"; // ...macht Einweisungen
+
+switch (job) 
+{
+    case "driver":
+        console.log(firstName + " fährt Taxi")
+        break;
+    case "diver":
+        console.log(firstName + " taucht im Rhein")
+        break;
+    case "artist":
+        console.log(firstName + " malt ein Bild")
+        break;
+    case "pilot":
+        console.log(firstName + " fliegt um die Welt")
+        break;
+    case "teacher":
+        console.log(firstName + " unterrichtet")
+        break;
+     case "instructor":
+            console.log(firstName + " macht Einweisungen")
+            break;
+
+    default:
+        console.log(firstName + " macht etwas anderes!");
+        break;
 }
