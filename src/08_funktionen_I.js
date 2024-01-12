@@ -30,11 +30,22 @@
 /***** Funktionen 02b *****/
 // 2b. Parametrisierung + Datenübergabe von AUSSEN
 
-ausgabeNamen2("Yuffie");
+// Argumente sind Daten für Parameter
+/*ausgabeNamen2("Yuffie"); // Argument
 ausgabeNamen2("Legoshi");
 ausgabeNamen2("Ripley");
 
 function ausgabeNamen2(firstName) // Parameter
 {
     console.log("Hey " + firstName + "!");
+}*/
+
+//ausgabeNamenParams("Keks","Krümel");
+
+const prompt = require('prompt-sync')({sigint: true});
+ausgabeNamenParams(prompt("Vorname: "), prompt("Nachname: "));
+
+function ausgabeNamenParams(firstName, familyName) // Parameter
+{
+    console.log("Hey " + firstName + " " + familyName + "!");
 }
