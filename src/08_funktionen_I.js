@@ -41,11 +41,53 @@ function ausgabeNamen2(firstName) // Parameter
 }*/
 
 //ausgabeNamenParams("Keks","Krümel");
-
+/*
 const prompt = require('prompt-sync')({sigint: true});
 ausgabeNamenParams(prompt("Vorname: "), prompt("Nachname: "));
 
 function ausgabeNamenParams(firstName, familyName) // Parameter
 {
     console.log("Hey " + firstName + " " + familyName + "!");
+}
+*/
+/***** Funktionen 03a *****/
+// 03a. Vorbereitung -Trennen der Funktionalitäten
+// Postulat: one function = one job (uncle Bob)
+// SRP single responsibility principle
+
+/*ausgabeNamenSRP("Keks","Krümel");
+
+function ausgabeNamenSRP(firstName, familyName) // Parameter
+{
+    // 1. Funktionalität: string composing
+    const GAP = " ";
+    let outputStr = "Hey " + firstName + GAP + familyName + "!"
+
+    // 2. Funktionalität: string output
+    console.log(outputStr);
+}
+*/
+/***** Funktionen 03b *****/
+
+// 1. Funktionalität (string composing)
+
+output(getString("Ellen","Ripley"));
+
+function getString(firstName,familyName)
+{
+    const GAP = " ";
+    let outputStr = "Hey " + firstName + GAP + familyName + "!";
+    return outputStr; // Ausgabe
+    console.log("blubb");
+}
+
+// 2. Funktionalität (string output)
+/*
+output("hi");
+output(2);
+output(true);
+*/
+function output(outputData)
+{
+    console.log(outputData);
 }
