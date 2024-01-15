@@ -4,13 +4,13 @@
 /*
 0. a+b | a-b | a*b | a/b  --> Ergebnis c 
 
-1. Dateneingabe + -überprüfung :  
-2. Auswahl Rechenart : 
-3. Fkt. Grundrechenarten : 
-4. Ausgabe in Konsole : 
+1. Dateneingabe + -überprüfung :  	
+2. Auswahl Rechenart : 				check
+3. Fkt. Grundrechenarten : 			check
+4. Ausgabe in Konsole : 			check
 */
 
-//const prompt = require('prompt-sync')({sigint: true});
+
 
 /*
 // module: addition a + b | test:
@@ -44,6 +44,9 @@ function multiply(a,b)
 }
 */
 // module: division a + b | test:
+/*
+const ERROR_STR_DIV = "Durch Null ist nicht teilbar!";
+
 output(divide(2,2));
 output(divide(2,-2));
 output(divide(2,0));
@@ -51,12 +54,57 @@ output(divide(0,2));
 
 function divide(a,b) 
 {
-	if (b == 0) {
-		return a;
-	} else {
+	if (b == 0) 
+	{
+		return ERROR_STR_DIV;
+		//return a;
+	} 
+	else 
+	{
 		return a / b;
 	}
 	//return a / b;
+}
+*/
+
+//const prompt = require('prompt-sync')({sigint: true});
+const ERROR_STR_DIV = "I'm afraid i can't do that, Dave!";
+
+//agreement : "+"" "-" "*" "/"
+
+output(calculator(3,2,"+"));
+output(calculator(3,2,"-"));
+output(calculator(3,2,"*"));
+output(calculator(3,2,":"));
+output(calculator(3,2,"/"));
+output(calculator(3,0,"/"));
+output(calculator(3,2,"#?!"));
+
+
+//output(calculator(a(prompt())),(b(prompt())),(op(prompt())));
+
+function calculator(a,b,op) 
+{
+	switch (op) 
+	{
+		case "+": //add
+			return a + b;
+		case "-": //sub
+			return a - b;
+		case "*": //mul
+			return a * b;
+		case "/": //div
+		case ":": //div
+			if (b == 0) 
+			{
+				return "Durch Null ist nicht teilbar!";
+			} else 
+			{
+				return a / b;
+			}
+		default: 
+			return ERROR_STR_DIV; //Error
+	}
 }
 
 
