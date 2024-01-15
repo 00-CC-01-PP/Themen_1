@@ -67,11 +67,18 @@ function divide(a,b)
 }
 */
 
-//const prompt = require('prompt-sync')({sigint: true});
-const ERROR_STR_DIV = "I'm afraid i can't do that, Dave!";
+const prompt = require('prompt-sync')({sigint: true});
+const ERROR_STR_GEN = "I'm afraid i can't do that, Dave!";
+const ERROR_STR_DIV = "Can't divide by Zero!";
+
+startAPP();
+function startAPP() 
+{
+	output(calculator(getNum1(),getOp(),getNum2()));
+}
 
 //agreement : "+"" "-" "*" "/"
-
+/*
 output(calculator(3,2,"+"));
 output(calculator(3,2,"-"));
 output(calculator(3,2,"*"));
@@ -79,11 +86,29 @@ output(calculator(3,2,":"));
 output(calculator(3,2,"/"));
 output(calculator(3,0,"/"));
 output(calculator(3,2,"#?!"));
+*/
 
+//let a = prompt("Erste Zahl: ");
+//let b = prompt("Zweite Zahl: ");
+//let op = prompt("Operator: ");
+//output(calculator(prompt("a:")),calculator(prompt("b: ")),calculator(prompt("op: ")));
 
-//output(calculator(a(prompt())),(b(prompt())),(op(prompt())));
+function getNum1() 
+{
+	return parseInt(prompt("a: "));
+}
 
-function calculator(a,b,op) 
+function getNum2() 
+{
+	return parseInt(prompt("b: "));
+}
+
+function getOp() 
+{
+	return prompt("op: ");
+}
+
+function calculator(a,op,b) 
 {
 	switch (op) 
 	{
@@ -97,13 +122,13 @@ function calculator(a,b,op)
 		case ":": //div
 			if (b == 0) 
 			{
-				return "Durch Null ist nicht teilbar!";
+				return ERROR_STR_DIV;
 			} else 
 			{
 				return a / b;
 			}
 		default: 
-			return ERROR_STR_DIV; //Error
+			return ERROR_STR_GEN; //Error
 	}
 }
 
@@ -114,3 +139,4 @@ function calculator(a,b,op)
 function output(outputData) {
 	console.log(outputData);
 }
+
