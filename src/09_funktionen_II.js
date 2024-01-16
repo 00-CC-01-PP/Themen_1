@@ -69,7 +69,7 @@ function divide(a,b)
 
 const prompt = require('prompt-sync')({sigint: true});
 const ERROR_STR_GEN = "I'm afraid i can't do that, Dave!";
-const ERROR_STR_DIV = "Can't divide by Zero!";
+const ERROR_STR_DIV = "Can't divide by zero!";
 
 startAPP();
 function startAPP() 
@@ -95,12 +95,13 @@ output(calculator(3,2,"#?!"));
 
 function getNum1() 
 {
-	return parseInt(prompt("a: "));
+	return parseFloat(prompt("a: ")); //parseInt gibt Ganzzahlen
+									  //parseFloat gibt Fließkommazahlen
 }
 
 function getNum2() 
 {
-	return parseInt(prompt("b: "));
+	return parseFloat(prompt("b: "));
 }
 
 function getOp() 
@@ -123,6 +124,7 @@ function calculator(a,op,b)
 			if (b == 0) 
 			{
 				return ERROR_STR_DIV;
+				//return "Das Ergebnis lautet " + a + ". Durch Null kann nicht geteilt werden!";
 			} else 
 			{
 				return a / b;
@@ -132,11 +134,8 @@ function calculator(a,op,b)
 	}
 }
 
-
-
 // output("hello");
 // output(2);
 function output(outputData) {
 	console.log(outputData);
 }
-
