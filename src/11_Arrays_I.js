@@ -108,7 +108,7 @@ for (let i = 10; i > 0; i--)
 
 // Inkrement (var. Schrittweite)
 
-for (let i = 10; i > 0; i--)
+for (let i = 10; i <= 100; i -= 5)
 {
     output(i);
 }
