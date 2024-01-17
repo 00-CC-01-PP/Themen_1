@@ -180,13 +180,15 @@ function getSentenceArr2(arr)
         return str;
 }
 */
+
 output(getSentenceArr2(["Ich","bin","die","coole","Ellen","Ripley"]));
 function getSentenceArr2(arr) 
 {
         const GAP = " ";
         const PUNCT = ".";
         let str = "";
-
+    // 1. Variante
+        /*
         for (let i = 0; i < arr.length; i++)
         {
             // 1. Fall
@@ -203,8 +205,21 @@ function getSentenceArr2(arr)
                 str += arr[i] + PUNCT;
             }
         }
-        return str;
+        //return str;
+        */
+    // 2. Variante: Struktur erzeugen und trimmen()
+    /*
+       for(let i = 0; i < arr.length; i++)
+       {
+        str += arr[i] + GAP;
+       }
+        return str.trim() + PUNCT;
+    */
+    // 3. Variante: Ausnutzen von generischen Funktionen
+    return arr.join(GAP) + PUNCT;
 }
+
+
 
 
 function output(outputStr) {
