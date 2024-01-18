@@ -72,10 +72,10 @@ function getHTML() {
 function getElement(tag,op) {
     switch (op) {
         case "open":
-            // return COBJ.open_o + tag + COBJ.close;
+            return COBJ.open_o + tag + COBJ.close;
             return CONTROLS[0] + tag + CONTROLS[2];
         case "close":
-            // return COBJ.close_o + tag + COBJ.close;
+            return COBJ.close_o + tag + COBJ.close;
             return CONTROLS[1] + tag + CONTROLS[2];
         default:
             return ERR_STR;
